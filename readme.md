@@ -14,10 +14,9 @@ ReactJsTyping is a simple react component to add effect to strings like typing
 ### props
   - StringList - Array of list
   - speed - Speed in ms to type
+  - cursorColor - cursor color default is #666
 
 ### Tech
-
-Dillinger uses a number of open source projects to work properly:
 
 * [ReactJs] - A JavaScript library for building user interfaces
 * [babel]

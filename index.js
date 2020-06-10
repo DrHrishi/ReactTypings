@@ -51,6 +51,11 @@ var ReactJsTyping = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
 
+    _defineProperty(_assertThisInitialized(_this), "cursorColors", function () {
+      var elem = document.querySelector('span');
+      elem.style.borderRightColor = elem.style.borderRightColor == 'white' ? _this.props.cursorColor : 'white';
+    });
+
     _defineProperty(_assertThisInitialized(_this), "writeLine", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       var _this$state, writeText, isDeleting, speed, i, fullTxt, delTime, loopNumber;
 
@@ -165,15 +170,17 @@ var ReactJsTyping = /*#__PURE__*/function (_Component) {
       setTimeout(function () {
         return _this2.writeLine();
       }, 500);
+      setInterval(function () {
+        return _this2.cursorColors();
+      }, 1000);
     }
   }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react["default"].createElement("span", {
         style: {
-          borderRight: '1px solid #666',
-          animation: 'blink 1s',
-          paddingRight: '1px'
+          borderRight: "1px solid ".concat(this.props.cursorColor || '#666'),
+          paddingRight: '3px'
         }
       }, this.state.writeText);
     }

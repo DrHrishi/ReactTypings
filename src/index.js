@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+
 export default class ReactJsTyping extends Component {
     constructor(props) {
         super(props)
         this.state = { writeText: '', loopNumber: 0, isDeleting: false }
     }
+
+    cursorColors = () => {
+        var elem = document.querySelector('span');
+        elem.style.borderRightColor = (elem.style.borderRightColor == 'white') ? this.props.cursorColor : 'white';
+    }
+
     writeLine = async () => {
         const { writeText, isDeleting } = this.state;
         const { speed } = this.props;
@@ -29,10 +36,22 @@ export default class ReactJsTyping extends Component {
         setTimeout(async () => await this.writeLine(), delTime);
     }
 
-    componentDidMount() { setTimeout(() => this.writeLine(), 500); }
+
+
+
+    componentDidMount() {
+        setTimeout(() => this.writeLine(), 500);
+        setInterval(()=>this.cursorColors(),1000)
+    }
 
     render() {
-        return (<span style={{ borderRight: '1px solid #666',animation:'blink 1s', paddingRight: '1px' }}>{this.state.writeText}</span>);
+        return (<span
+            style={{
+                borderRight: `1px solid ${this.props.cursorColor || '#666'}`,
+                paddingRight:'3px'
+                }}>
+                {this.state.writeText}
+        </span>);
     }
 
 }
