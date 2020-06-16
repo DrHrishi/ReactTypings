@@ -1,6 +1,10 @@
 # ReactJsTyping
 ReactJsTyping is a simple react component to add effect to strings like typing
 
+# Demo
+
+  ![](reactjstyping.gif)
+
 # Usage
         import ReactJsTyping from 'reactjs-typing-effect';
         
