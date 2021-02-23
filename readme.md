@@ -3,7 +3,7 @@ ReactJsTyping is a simple react component to add effect to strings like typing
 
 # Demo
 
-  ![](https://github.com/DrHrishi/ReactTypings/blob/dependabot/npm_and_yarn/lodash-4.17.19/src/reactjstyping.gif)
+  ![](https://github.com/DrHrishi/ReactTypings/blob/master/reactJsTyping.gif)
 
 # Usage
         import ReactJsTyping from 'reactjs-typing-effect';
